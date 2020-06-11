@@ -731,13 +731,21 @@ rm -fr mails.txt
 # fi
 
 
+#!/bin/bash
 # 批量延迟发信
 # while read -r line
 # do
-# 	sed -i 's/Targetmail/$line/g' mails.txt
-# 	sed -i 's/Mydomain/${Mydomain}/g' mails.txt
-# 	sleep 10
-# 	cat mails.txt | /bin/nc -vv mail.${Mydomain} 25
+#  	sed -i "s/Targetmail/$line/g" mail.txt
+#  	sleep 2
+#  	cat mail.txt | /bin/nc -vv mail.yourdomain.com 25 >/dev/null 2>&1
+#  	if [ $? -eq 0 ];then
+#		echo -e "$line 发送成功...."
+#  	else
+#		echo -e "$line 发送失败...."
+#		exit
+#  	fi
+# 	sleep 2
+# 	sed -i "s/$line/Targetmail/g" mail.txt
 # done < targetmails.txt
 
 
